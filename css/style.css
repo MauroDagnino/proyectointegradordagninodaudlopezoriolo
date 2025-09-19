@@ -105,18 +105,18 @@ font-weight: bold;
 .menu {
 display: flex;
 list-style: none;
-padding-left: 0%; 
-margin: -28px;   
+padding-left: -40%; 
+margin: -265%;   
 background-color: rgb(248, 147, 201);
 flex-direction: column;
-padding: 30px;
+padding: 10%;
 border-radius: 20px;
-width: 13%;
+width: 75%;
 margin-top: 25px
 }
 
 .menu li {
-  margin-bottom: 40px;               
+  margin-bottom: 40%;               
   border-bottom: 3px solid rgb(233, 37, 95); 
 }
 
@@ -194,4 +194,8 @@ list-style: none;
     width: 10%;
     border-radius: 20px;
     margin: 10px;
+ }
+
+ img{
+    width: 220px
  }
