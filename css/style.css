@@ -9,20 +9,22 @@ body{
     background-repeat: no-repeat;
     background-size: 100%;
     background-attachment: fixed;
-
+}
 
 header{ 
 
-background-color: rgb(248, 147, 201);
+    background-color: rgb(248, 147, 201);
+    height: 23vh;
+    display: flex;
+    flex-direction: row;
+    padding: 15px;
+    border-radius: 20px;
+    width: 90%;
+    margin-top: 15px;
 
-height: 23vh;
-display: flex;
-flex-direction: row;
-padding: 15px;
-border-radius: 20px;
-width: 90%;
-margin-top: 15px;
-
+}
+main{
+    display: flex;
 }
 
 .logo{
@@ -194,4 +196,3 @@ list-style: none;
     border-radius: 20px;
     margin: 10px;
  }
-}
