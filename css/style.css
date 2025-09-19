@@ -142,7 +142,7 @@ list-style: none;
  }
 
  .huevo1{
-    background-color: #f08;
+    background-color:  rgb(233, 37, 95);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -194,5 +194,4 @@ list-style: none;
     border-radius: 20px;
     margin: 10px;
  }
-
- 
+}
