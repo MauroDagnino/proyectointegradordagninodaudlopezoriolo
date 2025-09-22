@@ -258,3 +258,13 @@ img {
     display: flex;
 }
 
+.productosSearch {
+    display: flex;
+    flex-direction: row;
+    max-width: 70%;
+    text-align: center;
+}
+
+.resultados{
+    display: none;
+}
