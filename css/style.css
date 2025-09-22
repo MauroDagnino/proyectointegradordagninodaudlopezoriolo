@@ -1,4 +1,9 @@
-body{
+*{
+    box-sizing: border-box;
+}
+
+
+body {
     display: flex;
     width: 100vw;
     justify-content: center;
@@ -10,11 +15,12 @@ body{
     background-size: 100%;
     background-attachment: fixed;
 }
-main{
+
+main {
     display: flex;
 }
 
-header{ 
+header {
 
     background-color: rgb(248, 147, 201);
     height: 23vh;
@@ -25,19 +31,19 @@ header{
     width: 90%;
     margin-top: 15px;
     gap: 40px;
-    
+
 
 }
 
 
 
-.logo{
+.logo {
     display: flex;
     width: 200px;
     margin-left: 20px;
 }
 
-.buscador form{ 
+.buscador form {
     display: flex;
     background-color: aliceblue;
     border-radius: 25px;
@@ -57,16 +63,16 @@ header{
 }
 
 .buscador button {
-  background: #ff4d80;
-  color: white;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  padding: 10px 15px;
-  font-size: 16px;
+    background: #ff4d80;
+    color: white;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
 }
 
 
-.login{
+.login {
     display: flex;
     margin-top: 100px;
     margin-left: 40%;
@@ -76,14 +82,14 @@ header{
 .login a,
 .login a:visited {
 
-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-color: rgb(240, 26, 97);
-text-decoration: none;
-font-size: 22px;
-font-weight: bold;
- }
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(240, 26, 97);
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+}
 
- .pie {
+.pie {
     justify-content: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
@@ -96,9 +102,9 @@ font-weight: bold;
     border-radius: 20px;
     width: 100%;
     margin-top: 10px
- }
- 
-.catego{
+}
+
+.catego {
     display: flex;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 25px;
@@ -108,49 +114,49 @@ font-weight: bold;
 
 
 .menu {
-position: static;
-display: flex;
-list-style: none;
-margin: 10px;   
-background-color: rgb(248, 147, 201);
-flex-direction: column;
-padding: 20px;
-border-radius: 20px;
-width: 200px;
-align-items: flex-start;
-margin-left: -700px;
-align-self: start;
+    position: static;
+    display: flex;
+    list-style: none;
+    margin: 10px;
+    background-color: rgb(248, 147, 201);
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+    width: 200px;
+    align-items: flex-start;
+    margin-left: 0px;
+    align-self: start;
 }
 
 .menu li {
-  margin-bottom: 30%;               
-  border-bottom: 3px solid rgb(233, 37, 95); 
+    margin-bottom: 30%;
+    border-bottom: 3px solid rgb(233, 37, 95);
 }
 
 
 .menu a,
 .menu a:visited {
 
-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-color: rgb(240, 26, 97);
-text-decoration: none;
-font-size: 22px;
-font-weight: bold;
- }
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(240, 26, 97);
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+}
 
 .listalado {
     display: flex;
-list-style: none;
+    list-style: none;
 }
- 
- .fotohuevo{
+
+.fotohuevo {
     width: 500px;
     height: 500px;
     border: 5px solid black;
- }
+}
 
- .huevo1{
-    background-color:  rgb(248, 147, 201, 0.9);
+.huevo1 {
+    background-color: rgb(248, 147, 201, 0.9);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -158,9 +164,9 @@ list-style: none;
     width: 90%;
     border-radius: 20px;
     margin: 10px;
- }
+}
 
- .huevo2{
+.huevo2 {
     background-color: rgb(194, 194, 176);
     display: flex;
     flex-direction: column;
@@ -169,9 +175,9 @@ list-style: none;
     width: 30%;
     border-radius: 20px;
     margin: 10px;
- }
+}
 
- .huevo3{
+.huevo3 {
     background-color: rgb(194, 194, 176);
     display: flex;
     flex-direction: column;
@@ -180,9 +186,9 @@ list-style: none;
     width: 10%;
     border-radius: 10px;
     margin: 10px;
- }
+}
 
- .huevo4{
+.huevo4 {
     background-color: rgb(194, 194, 176);
     display: flex;
     flex-direction: column;
@@ -191,9 +197,10 @@ list-style: none;
     width: 50%;
     border-radius: 20px;
     margin: 10px;
- }
- .huevo5{
-    background-color:rgb(65, 168, 65);
+}
+
+.huevo5 {
+    background-color: rgb(65, 168, 65);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -201,12 +208,13 @@ list-style: none;
     width: 10%;
     border-radius: 20px;
     margin: 10px;
- }
+}
 
- img{
+img {
     width: 220px
- }
- .huevo6{
+}
+
+.huevo6 {
     background-color: rgb(0, 255, 255, 0.5);
     display: flex;
     flex-direction: column;
@@ -215,12 +223,28 @@ list-style: none;
     width: 80%;
     border-radius: 20px;
     margin: 10px;
- }
- section.productostop{
-    
- }
- .productostop1{
-    background-color:  rgb(248, 147, 201, 0.9);
+}
+
+.productostop {
+    display: flex;
+    flex-direction: row;
+    max-width: 70%;
+}
+
+.fotoP{
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.pAleatorios{
+    width: 100%;
+    display: block;
+    margin-left: 50px;
+}
+
+.productostop1 {
+    background-color: rgb(248, 147, 201, 0.9);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -228,48 +252,5 @@ list-style: none;
     width: 100%;
     border-radius: 20px;
     margin: 10px;
- }
-
- .productostop2{
-  background-color: rgb(248, 147, 201, 0.9);
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
-  border-radius: 20px;
-  margin: 10px;
- }
-
-.productostop3{
-  background-color: rgb(248, 147, 201, 0.9);
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
-  border-radius: 20px;
-  margin: 10px;
 }
 
-.productostop3{
-    background-color: rgb(248, 147, 201, 0.9);
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
-  border-radius: 20px;
-  margin: 10px;
-}
-
-.productostop4{
-    background-color: rgb(248, 147, 201, 0.9);
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 100%;
-  border-radius: 20px;
-  margin: 10px;
-}
