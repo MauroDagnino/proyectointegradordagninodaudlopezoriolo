@@ -253,6 +253,11 @@ img {
     width: 100%;
     display: block;
     margin-left: 50px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: rgb(240, 26, 97);
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .productostop1 {
@@ -306,13 +311,8 @@ img {
 .resultados{
     display: none;
 }
-<<<<<<< HEAD
-
-
-=======
 .chocolates2{
     width: 100%;
     display: block;
     margin-left: 500px;
 }
->>>>>>> 1bdea12627ce1297a7c4b3f06a9d4a1a9358d47c
