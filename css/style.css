@@ -308,6 +308,26 @@ img {
     display: none;
 }
 
+.reviews{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+.review{
+    flex-direction: row;
+    width: 300px;
+    padding: 15px;
+    background-color: aliceblue;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.usuario{
+    font-weight: bold;
+    font-size: large;
+}
+
 
 
 
