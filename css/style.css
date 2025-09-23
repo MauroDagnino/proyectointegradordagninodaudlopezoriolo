@@ -8,7 +8,6 @@ body {
     width: 100vw;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
     background-color: rgba(160, 160, 153, 0.477);
     background-image: url("../img/pgp_sweetbonanzadice.png");
     background-repeat: no-repeat;
@@ -91,6 +90,7 @@ header {
 
 .pie {
     justify-content: center;
+    align-items: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
     gap: 25px;
@@ -306,5 +306,13 @@ img {
 .resultados{
     display: none;
 }
+<<<<<<< HEAD
 
 
+=======
+.chocolates2{
+    width: 100%;
+    display: block;
+    margin-left: 500px;
+}
+>>>>>>> 1bdea12627ce1297a7c4b3f06a9d4a1a9358d47c
