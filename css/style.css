@@ -228,7 +228,6 @@ img {
 .productostop {
     display: flex;
     flex-direction: row;
-    -ms-grid-row-span: inherit;
     max-width: 70%;
 }
 
