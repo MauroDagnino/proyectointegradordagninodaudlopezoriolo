@@ -438,7 +438,8 @@ img {
         font-size: 14px;
         text-align: center;
         height: auto;
-        gap: 10px;
+        gap: 5px;
+        width: 90%;
     }
 
     .menu {
@@ -454,11 +455,11 @@ img {
     }
 
     .fotohuevo {
-        width: 100%;
+        width: 90%;
         height: auto;
     }
 
-    .huevo1, .huevo2, .huevo3, .huevo4, .huevo5, .huevo6 {
+    .huevo1, .huevo2, .huevo3, .huevo4, .huevo5, .huevo6, .huevo7, .huevo8 {
         width: 100%;
         margin: 5px;
     }
@@ -471,6 +472,7 @@ img {
     .productostop1 {
         width: 90%;
     }
+
     .productosSearch {
         flex-direction: column;
         max-width: 100%;
