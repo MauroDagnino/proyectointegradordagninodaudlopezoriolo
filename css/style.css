@@ -92,7 +92,7 @@ header {
     font-size: 18px;
     gap: 25px;
     background-color: rgb(248, 147, 201);
-    height: 5vh;
+    height: 5px;
     display: flex;
     flex-direction: row;
     padding: 20px;
