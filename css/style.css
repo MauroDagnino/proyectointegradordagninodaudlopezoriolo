@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     display: flex;
     width: 100vw;
@@ -34,8 +33,6 @@ header {
 
 
 }
-
-
 
 .logo {
     display: flex;
@@ -70,7 +67,6 @@ header {
     padding: 10px 15px;
     font-size: 16px;
 }
-
 
 .login {
     display: flex;
@@ -113,7 +109,6 @@ header {
     font-weight: 700;
 }
 
-
 .menu {
     position: static;
     display: flex;
@@ -133,7 +128,6 @@ header {
     margin-bottom: 30%;
     border-bottom: 3px solid rgb(233, 37, 95);
 }
-
 
 .menu a,
 .menu a:visited {
@@ -232,7 +226,6 @@ img {
     gap: 16px;
     flex-direction: row;
     width: 100%;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
     text-align: center;
 }
 
@@ -347,6 +340,7 @@ img {
     border-radius: 10px;
     margin: 25px;
 }
+
 .register3{
    padding: 10px;
 }
@@ -367,17 +361,76 @@ img {
     align-items: center;
     width: 100%;
     border-radius: 10px;
-    margin: 25px;
+    margin: 75px;
 }
+
 .login3{
    padding: 10px;
 }
 
 .login4{
-    margin-top: 10px;
+    margin-top: 10px;   
     padding: 10px;
     margin-bottom: 10px;
     border: 2px solid black;
     width: 100%;
 }
 
+
+@media (max-width: 420px) {
+
+    body {
+        flex-direction: column;
+        background-size: cover;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: 375px;
+    }
+
+    .logo {
+        width: 100px;
+        margin: 5px;
+    }
+
+    .buscador form {
+        width: 90%;
+        margin: 5px;
+    }
+
+    .login {
+        margin: 5px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .register2,
+    .login2 {
+        width: 90%;
+        margin-top: 230px;
+        margin-bottom: 230px;
+    }
+
+    .pie {
+        flex-direction: row;
+        font-size: 14px;
+        text-align: center;
+        height: auto;
+        gap: 10px;
+    }
+
+    .menu {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu li {
+        margin: 10px;
+        border-bottom: none;
+    }
+    
+}
