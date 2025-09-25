@@ -433,4 +433,43 @@ img {
         border-bottom: none;
     }
     
+    .fotohuevo {
+        width: 100%;
+        height: auto;
+    }
+
+    .huevo1, .huevo2, .huevo3, .huevo4, .huevo5, .huevo6 {
+        width: 100%;
+        margin: 5px;
+    }
+
+    .productostop {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .productostop1 {
+        width: 90%;
+    }
+    .productosSearch {
+        flex-direction: column;
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .pAleatorios {
+        width: 90%;
+        margin-left: 0;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .reviews {
+        justify-content: center;
+    }
+
+    .review {
+        width: 90%;
+        margin: 10px;
+    }
 }
