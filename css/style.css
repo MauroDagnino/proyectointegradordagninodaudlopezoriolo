@@ -9,6 +9,7 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: rgba(160, 160, 153, 0.477);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-image: url("../img/pgp_sweetbonanzadice.png");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -53,7 +54,6 @@ header {
 .buscador input {
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 15px;
     font-size: 20px;
     color: #333;
@@ -78,7 +78,6 @@ header {
 .login a,
 .login a:visited {
 
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: rgb(240, 26, 97);
     text-decoration: none;
     font-size: 22px;
@@ -88,7 +87,6 @@ header {
 .pie {
     justify-content: center;
     align-items: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 18px;
     gap: 25px;
     background-color: rgb(248, 147, 201);
@@ -103,8 +101,6 @@ header {
 
 .catego {
     display: flex;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 25px;
     color: rgb(255, 255, 255);
     font-weight: 700;
 }
@@ -130,7 +126,6 @@ header {
 .menu a,
 .menu a:visited {
 
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: rgb(240, 26, 97);
     text-decoration: none;
     font-size: 22px;
@@ -161,7 +156,6 @@ header {
 
 .huevo2 {
     background-color: rgb(240, 26, 97);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -173,7 +167,6 @@ header {
 
 .huevo3 {
     background-color: rgb(240, 26, 97);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -185,7 +178,6 @@ header {
 
 .huevo4 {
     background-color: rgb(240, 26, 97);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -197,7 +189,6 @@ header {
 
 .huevo5 {
     background-color: rgb(65, 168, 65);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -224,7 +215,6 @@ img {
 
 .huevo7{
     background-color: rgb(240, 26, 97);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -249,8 +239,6 @@ img {
 
 .productostop a,
 .productostop a:visited {
-
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: rgb(240, 26, 97);
     text-decoration: none;
     font-size: 22px;
@@ -267,7 +255,6 @@ img {
     margin-left: 50px;
     background-color: rgb(248, 147, 201);
     display: flex;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 15px;
     color: rgb(255, 255, 255);
     width: 40%;
@@ -285,8 +272,6 @@ img {
     width: 200px;
     border-radius: 20px;
     margin: 10px;
-
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: rgb(240, 26, 97);
     text-decoration: none;
     font-size: 22px;
@@ -295,8 +280,6 @@ img {
 
 .productostop1 a,
 .productostop1 a:visited {
-
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: rgb(240, 26, 97);
     text-decoration: none;
     font-size: 22px;
@@ -316,8 +299,6 @@ img {
 
 .productosSearch a,
 .productosSearch a:visited {
-
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: rgb(240, 26, 97);
     text-decoration: none;
     font-size: 22px;
