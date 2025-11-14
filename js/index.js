@@ -2,7 +2,7 @@ window.addEventListener("load", function(){
 
     let productosTop = document.querySelector(".productostop")
 
-    let url = ""
+    let url = "https://dummyjson.com/products"
 
     fetch(url)
     .then(function (res) {
