@@ -13,14 +13,15 @@ window.addEventListener("load", function(){
         let resultados = data.products
         console.log(resultados)
 
+        productosTop.innerHTML = "";
         for (let i = 0; i < resultados.length; i++) {
             let p = resultados[i];
-            productosTop.innerHTML += ` <article>
+            productosTop.innerHTML += ` <article class="productostop1">
                 <img src="${p.thumbnail}">
                 <h3>${p.title}</h3>
                 <p>$ ${p.price}</p>
-                <p>$ ${p.category}</p>
-                <p>${p.description}</p>
+                <p>${p.category}</p>
+                <p>- ${p.description}</p>
             </article>
             `
         }
