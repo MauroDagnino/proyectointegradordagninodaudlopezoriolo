@@ -1,5 +1,24 @@
 window.addEventListener("load", function(){
 
+let formulario = document.querySelector(".buscador2");
+let input = document.querySelector("#barra")
+
+formulario.addEventListener("submit", function(e){
+    e.preventDefault();
+    let buscador = input.value.length;
+
+    if (input.value.length == 0){
+        alert("el campo de busqueda está vacio")
+    }else if (input.value.length <= 3){
+        alert("el campo debe tener al menos tres caracteres")
+    }else{
+        formulario.submit()
+    }
+})
+
+
+
+
     let productosTop = document.querySelector(".productostop")
 
     let url = "https://dummyjson.com/products"
@@ -22,6 +41,7 @@ window.addEventListener("load", function(){
                 <p>$ ${p.price}</p>
                 <p>${p.category}</p>
                 <p>- ${p.description}</p>
+                <a class="vermas" href="./productos.html?id=${p.id}">Ver +</a>
             </article>
             `
         }
