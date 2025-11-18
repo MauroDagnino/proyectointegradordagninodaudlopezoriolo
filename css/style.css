@@ -269,9 +269,9 @@ img {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    width: 200px;
+    width: 230px;
     border-radius: 20px;
-    margin: 10px;
+    margin: 5px;
     color: rgb(240, 26, 97);
     text-decoration: none;
     font-size: 22px;
