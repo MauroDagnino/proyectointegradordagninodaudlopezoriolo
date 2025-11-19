@@ -16,7 +16,7 @@ formulario.addEventListener("submit", function(e){
     }
 })
 
-let category = this.document.querySelector(".listalado")
+let category2 = this.document.querySelector(".listalado")
 let urlCategory = 'https://dummyjson.com/products/category-list'
 
 fetch(urlCategory)
@@ -35,7 +35,7 @@ fetch(urlCategory)
         `
     }
 
-    category.innerHTML = cate
+    category2.innerHTML = cate
 })
 .catch(function (error) {
     console.log("Error: " + error);
@@ -45,12 +45,12 @@ fetch(urlCategory)
 
 let queryString = location.search;
 let query = new URLSearchParams(queryString);
-let category = query.get("cat");
+let category3 = query.get("cat");
 let product = document.querySelector(".productostop");
 
 product.innerHTML = ""
 
-let URL = `https://dummyjson.com/products/category/${category}`;
+let URL = `https://dummyjson.com/products/category/${category3}`;
 
 fetch(URL)
     .then(function (res) {
@@ -65,7 +65,7 @@ fetch(URL)
             let producto = listaProductos[i];
 
             product.innerHTML += `
-                <article class="articulo_categoria">
+                <article class="productostop1">
                     <img src="${producto.images[0]}" alt="${producto.title}">
                     <h3>${producto.title}</h3>
                     <p>$${producto.price}</p>
