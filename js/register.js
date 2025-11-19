@@ -38,6 +38,6 @@ window.addEventListener("load", function () {
             return;
         }
 
-        this.submit(); 
+        window.location.href = "./login.html";
     });
 });
