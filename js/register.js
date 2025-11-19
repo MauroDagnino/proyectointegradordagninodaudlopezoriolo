@@ -1,6 +1,23 @@
 window.addEventListener("load", function () {
 
-    let formulario = document.querySelector(".register");
+let formulario = document.querySelector(".buscador2");
+let input = document.querySelector("#barra")
+
+formulario.addEventListener("submit", function(e){
+    e.preventDefault();
+    let buscador = input.value.length;
+
+    if (input.value.length == 0){
+        alert("el campo de busqueda está vacio")
+    }else if (input.value.length <= 3){
+        alert("el campo debe tener al menos tres caracteres")
+    }else{
+        formulario.submit()
+    }
+})
+
+
+    let formu = document.querySelector(".register");
     let gmail = document.querySelector("#email");
     let contra1 = document.querySelector("#contraseña");
     let contra2 = document.querySelector("#contraseña1");
@@ -10,7 +27,7 @@ window.addEventListener("load", function () {
     let casillaCorta = "Esta casilla debe tener al menos 6 caracteres";
     let casillaIgual = "Las contraseñas no coinciden";
 
-    formulario.addEventListener("submit", function (event) {
+    formu.addEventListener("submit", function (event) {
         event.preventDefault(); 
 
         if (gmail.value == "") {

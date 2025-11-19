@@ -18,16 +18,31 @@ formulario.addEventListener("submit", function(e){
 
 
 
-    let email = this.document.querySelector("email")
-    let contraseña = this.document.querySelector("contraseña")
+let form = document.querySelector(".login2");
+let email = document.querySelector("#email");
+let contraseña = document.querySelector("#contraseña");
+
+form.addEventListener("submit", function (event){
+    event.preventDefault();
+
 
     if (email.value == "") {
-        this.alert("el campo esta vacio");
-     }
-    if (contraseña.value == "") {
-        this.alert("el campo esta vacio");
-     }
-    if (contraseña.value < 6) {
-        this.alert("La contraseña debe tener al menos 6 caracteres");
-     }
+        alert("el campo del email se encuentra vacio");
+    }
+    else if (contraseña.value == "") {
+        alert("el campo de la contraseña se encuentra vacio");
+    }
+    else if (contraseña.value.length < 6) {
+        alert("La contraseña debe tener al menos 6 caracteres");
+    }
+    else {
+        localStorage.setItem("user", email.value)
+        console.log(localStorage);
+        let recupero = localStorage.getItem("user")
+        console.log('Email: ', recupero);
+        location.href = "./index.html";
+    }
+    
+    
+})
 })
