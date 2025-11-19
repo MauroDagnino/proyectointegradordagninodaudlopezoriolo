@@ -1,86 +1,43 @@
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
 
-let formulario = document.querySelector(".buscador2");
-let input = document.querySelector("#barra")
+    let formulario = document.querySelector(".register");
+    let gmail = document.querySelector("#email");
+    let contra1 = document.querySelector("#contraseña");
+    let contra2 = document.querySelector("#contraseña1");
+    let terminos = document.querySelector("#terminos");
 
-formulario.addEventListener("submit", function(e){
-    e.preventDefault();
-    let buscador = input.value.length;
+    let casillaVacia = "Esta casilla esta vacia";
+    let casillaCorta = "Esta casilla debe tener al menos 6 caracteres";
+    let casillaIgual = "Las contraseñas no coinciden";
 
-    if (input.value.length == 0){
-        alert("el campo de busqueda está vacio")
-    }else if (input.value.length <= 3){
-        alert("el campo debe tener al menos tres caracteres")
-    }else{
-        formulario.submit()
-    }
-})
+    formulario.addEventListener("submit", function (event) {
+        event.preventDefault(); 
 
+        if (gmail.value == "") {
+            alert(casillaVacia);
+            return;
+        }
 
-let category = this.document.querySelector(".listalado")
-let urlCategory = 'https://dummyjson.com/products/category-list'
+        if (contra1.value == "") {
+            alert(casillaVacia);
+            return;
+        }
 
-fetch(urlCategory)
-.then(function(res){
-    return res.json()
-})
+        if (contra1.value.length < 6) {
+            alert(casillaCorta);
+            return;
+        }
 
-.then(function(data){
-    console.log(data)
-    let cate = ""
+        if (contra1.value != contra2.value) {
+            alert(casillaIgual);
+            return;
+        }
 
-    for (let i = 0; i < data.length; i++) {
-        let categoria = data[i];
-        console.log(categoria);
-        cate += ` <li><a href="./category.html?cat=${categoria}">${categoria}</a></li>
-        `
-    }
+        if (!terminos.checked) {
+            alert("Tenés que aceptar los términos y condiciones");
+            return;
+        }
 
-    category.innerHTML = cate
-})
-.catch(function (error) {
-    console.log("Error: " + error);
-})
-let form = document.querySelector(".register");
-
-form.addEventListener("load", function(event) {
-
-    let email = document.getElementById("email").value;
-    let pass1 = document.getElementById("password1").value;
-    let pass2 = document.getElementById("password2").value;
-    let terminos = document.getElementById("terminos").checked;
-
-    if (email === "") {
-        alert("El email es obligatorio");
-        event.preventDefault();
-        return;
-    }
-
-    if (pass1 === "") {
-        alert("La contraseña es obligatoria");
-        event.preventDefault();
-        return;
-    }
-
-    if (pass1.length < 6) {
-        alert("La contraseña debe tener al menos 6 caracteres");
-        event.preventDefault();
-        return;
-    }
-
-    if (pass1 !== pass2) {
-        alert("Las contraseñas no coinciden");
-        event.preventDefault();
-        return;
-    }
-
-    if (!terminos) {
-        alert("Debes aceptar los términos y condiciones");
-        event.preventDefault();
-        return;
-    }
-
-    window.location.href = "login.html";
+        this.submit(); 
+    });
 });
-
-})
