@@ -15,4 +15,30 @@ formulario.addEventListener("submit", function(e){
         formulario.submit()
     }
 })
+
+let category = this.document.querySelector(".listalado")
+let urlCategory = 'https://dummyjson.com/products/category-list'
+
+fetch(urlCategory)
+.then(function(res){
+    return res.json()
+})
+
+.then(function(data){
+    console.log(data)
+    let cate = ""
+
+    for (let i = 0; i < data.length; i++) {
+        let categoria = data[i];
+        console.log(categoria);
+        cate += ` <li><a href="./category.html?cat=${categoria}">${categoria}</a></li>
+        `
+    }
+
+    category.innerHTML = cate
+})
+.catch(function (error) {
+    console.log("Error: " + error);
+})
+
 })
