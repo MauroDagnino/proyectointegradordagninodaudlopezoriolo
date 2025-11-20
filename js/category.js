@@ -62,15 +62,15 @@ fetch(URL)
         let listaProductos = data.products;
 
         for (let i = 0; i < listaProductos.length; i++) {
-            let producto = listaProductos[i];
+            let p = listaProductos[i];
 
             product.innerHTML += `
                 <article class="productostop1">
-                    <img src="${producto.images[0]}" alt="${producto.title}">
-                    <h3>${producto.title}</h3>
-                    <p>$${producto.price}</p>
-                    <p>${producto.description}</p>
-                    <a href="./productos.html?detalles=${producto.title}">Ver Detalles</a>
+                    <img src="${p.thumbnail}">
+                    <h3>${p.title}</h3>
+                    <p>$${p.price}</p>
+                    <p>- ${p.description}</p>
+                    <a class="vermas" href="./productos.html?detalles=${p.title}">Ver +</a>
                 </article>
             `;
         }
