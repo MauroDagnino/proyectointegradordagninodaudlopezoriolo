@@ -42,3 +42,45 @@ fetch(urlCategory)
 })
 
 })
+
+let tituloResultados = document.querySelector(".pAleatorios h1");
+let contenedorProductos = document.querySelector(".productosSearch");
+let qSearch = new URLSearchParams(location.search)
+let termino = qSearch.get('search');
+
+    
+
+fetch(`https://dummyjson.com/products/search?q=${termino}`)
+   .then(function(res){
+      return res.json()
+   })
+
+.then(function(losProductos){
+    console.log("Resultados de búsqueda:", losProductos)
+
+    let nuevoTitulo = `${termino}`;
+    tituloResultados.innerText += " " + `${nuevoTitulo}`;
+
+    let lista = losProductos.products;
+    contenedorProductos.innerHTML = ``
+
+    if (lista.length > 0) {
+       
+        for (let i = 0; i < lista.length; i++) {
+
+            let p = lista[i];
+
+            let producto = `<article class="productostop1">
+                <img class="fotoP" src="${p.thumbnail}">
+                <h3>${p.title}</h3>
+                <p>$ ${p.price}</p>
+                <p>- ${p.description}</p>
+                <a id="vermas" href="./productos.html?id=${p.id}">Ver +</a>
+            </article>`
+            
+            contenedorProductos.innerHTML += producto
+        }
+    } else {
+        contenedorProductos.innerHTML = `<h1>No se encuentran resultados para: ${termino}</h1>`
+        }
+})
