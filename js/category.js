@@ -70,7 +70,7 @@ fetch(URL)
                     <h3>${producto.title}</h3>
                     <p>$${producto.price}</p>
                     <p>${producto.description}</p>
-                    <a href="./product.html?detalles=${producto.title}">Ver Detalles</a>
+                    <a href="./productos.html?detalles=${producto.title}">Ver Detalles</a>
                 </article>
             `;
         }
