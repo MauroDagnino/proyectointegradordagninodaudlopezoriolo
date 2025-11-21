@@ -140,15 +140,16 @@ fetch("https://dummyjson.com/products/categories")
                                             <h3 class="nobre_fecha">${nombre}</h3>
                                             <h3 class="fecha">${fecha}</h3>
                                             <h4 class="puntuacion">
-                                                <img src="./img/estrella-amarilla.png" alt="estrella">
-                                                <img src="./img/estrella-gris.png" alt="estrella">
-                                                <img src="./img/estrella-gris.png" alt="estrella">
-                                                <img src="./img/estrella-gris.png" alt="estrella">
-                                                <img src="./img/estrella-gris.png" alt="estrella">1/5
+                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
+                                                <img src="./img/estrella-Gris.jpg" alt="estrella">
+                                                <img src="./img/estrella-Gris.jpg" alt="estrella">
+                                                <img src="./img/estrella-Gris.jpg" alt="estrella">
+                                                <img src="./img/estrella-Gris.jpg" alt="estrella">1/5
                                             </h4>
                                             <p>${comentarioReview}</p>
                                         </article>
                                     `;
+                                    
                                 }
                                 else if (rating == 2) {
                                     comentario += `
@@ -156,11 +157,11 @@ fetch("https://dummyjson.com/products/categories")
                                             <h3 class="nobre_fecha">${nombre}</h3>
                                             <h3 class="fecha">${fecha}</h3>
                                             <h4 class="puntuacion">
-                                                <img src="./img/estrella-amarilla.png" alt="estrella">
-                                                <img src="./img/estrella-amarilla.png" alt="estrella">
-                                                <img src="./img/estrella-gris.png" alt="estrella">
-                                                <img src="./img/estrella-gris.png" alt="estrella">
-                                                <img src="./img/estrella-gris.png" alt="estrella">2/5
+                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
+                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
+                                                <img src="./img/estrella-Gris.jpg" alt="estrella">
+                                                <img src="./img/estrella-Gris.jpg" alt="estrella">
+                                                <img src="./img/estrella-Gris.jpg" alt="estrella">2/5
                                             </h4>
                                             <p>${comentarioReview}</p>
                                         </article>
@@ -172,11 +173,11 @@ fetch("https://dummyjson.com/products/categories")
                                             <h3 class="nobre_fecha">${nombre}</h3>
                                             <h3 class="fecha">${fecha}</h3>
                                             <h4 class="puntuacion">
-                                                <img src="./img/estrella-amarilla.png" alt="estrella">
-                                                <img src="./img/estrella-amarilla.png" alt="estrella">
-                                                <img src="./img/estrella-amarilla.png" alt="estrella">
-                                                <img src="./img/estrella-gris.png" alt="estrella">
-                                                <img src="./img/estrella-gris.png" alt="estrella">3/5
+                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
+                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
+                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
+                                                <img src="./img/estrella-Gris.jpg" alt="estrella">
+                                                <img src="./img/estrella-Gris.jpg" alt="estrella">3/5
                                             </h4>
                                             <p>${comentarioReview}</p>
                                         </article>
@@ -188,11 +189,11 @@ fetch("https://dummyjson.com/products/categories")
                                             <h3 class="nobre_fecha">${nombre}</h3>
                                             <h3 class="fecha">${fecha}</h3>
                                             <h4 class="puntuacion">
-                                                <img src="./img/estrella-amarilla.png" alt="estrella">
-                                                <img src="./img/estrella-amarilla.png" alt="estrella">
-                                                <img src="./img/estrella-amarilla.png" alt="estrella">
-                                                <img src="./img/estrella-amarilla.png" alt="estrella">
-                                                <img src="./img/estrella-gris.png" alt="estrella">4/5
+                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
+                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
+                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
+                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
+                                                <img src="./img/estrella-Gris.jpg" alt="estrella">4/5
                                             </h4>
                                             <p>${comentarioReview}</p>
                                         </article>
@@ -204,11 +205,11 @@ fetch("https://dummyjson.com/products/categories")
                                             <h3 class="nobre_fecha">${nombre}</h3>
                                             <h3 class="fecha">${fecha}</h3>
                                             <h4 class="puntuacion">
-                                                <img src="./img/estrella-amarilla.png" alt="estrella">
-                                                <img src="./img/estrella-amarilla.png" alt="estrella">
-                                                <img src="./img/estrella-amarilla.png" alt="estrella">
-                                                <img src="./img/estrella-amarilla.png" alt="estrella">
-                                                <img src="./img/estrella-amarilla.png" alt="estrella">
+                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
+                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
+                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
+                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
+                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
                                                 5/5
                                             </h4>
                                             <p>${comentarioReview}</p>
@@ -218,6 +219,7 @@ fetch("https://dummyjson.com/products/categories")
                             }
 
                            
+                            
                             seccion_comentarios.innerHTML = comentario;
                         }
                     }
