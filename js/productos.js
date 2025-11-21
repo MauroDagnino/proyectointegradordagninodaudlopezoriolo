@@ -55,10 +55,11 @@ let stock = document.querySelector(".huevo9")
 let img = document.querySelector(".fotohuevo")
 let tags = document.querySelector(".huevo10")
 let review = document.querySelector(".reviews")
-let rating = document.querySelector(".raiting")
+let rating = document.querySelector(".rating")
 let comentario = document.querySelector(".comentario")
 let fecha = document.querySelector(".fecha1")
 let nombreusuario = document.querySelector(".usuario")
+let mailusu = document.querySelector(".email")
 
 fetch(url_product)
     .then(function(response) {
@@ -68,6 +69,7 @@ fetch(url_product)
         console.log(data)
         console.log(data.category)
         let categorias2 = data.category
+        let link = ""
         for (let i = 0; i < 1; i ++){
             const element = categorias2[i];
             link += `<a href="category.html?category=${data.category}">categoria: ${data.category}</a>`
@@ -77,24 +79,26 @@ fetch(url_product)
         let texto = "";
 
         for (let i = 0; i < 3; i++) {
-            const element = reseñas [i];
-            texto += `<div class="review">
-            <p class="raiting">${element.rating}</p>
-            <p class="comentario">${element.comment}
-            <p class="fecha1">${element.data}</p>
-            <p class="huevo2">${element.reviewerName}</p>
-            <p class="emailUsu">${element.reviewerEmail}</p>
-            </div>`
+            const element = reseñas[i];
+            texto += `<section class="reviews">
+                     <div class="review">
+                        <p class="rating">${element.rating}</p>
+                        <p class="comentario">${element.comentario}
+                        <p class="fecha1">${element.data}</p>
+                        <p class="usuario">${element.reviewerName}</p>
+                        <p class="email">${element.reviewerEmail}</p>
+                      </div>
+                      </section>`
         }
         nombre.innerText = data.title;
-        marca.innerText = `Marca: ${data.brand}`;
-        descripcion.innerText = data.descripcion;
-        precio.innerText = `Precio: ${data.price}`;
+        marca.innerText = `${data.brand}`;
+        descripcion.innerText = `${data.description}`;
+        precio.innerText = `$${data.price}`;
         categorias.innerHTML = link
         stock.innerText = `Stock: ${data.stock}`
         img.src = data.images[0];
-        tags.innerText = `Tags: ${data.tags}`;
-        review.innerText =`<h3> Opiniones de usuario <h3> ${texto}`;
+        tags.innerText = `${data.tags}`;
+        review.innerText =`${texto}`;
      })
     .catch(function(error) {
         console.log ("error" + error);
