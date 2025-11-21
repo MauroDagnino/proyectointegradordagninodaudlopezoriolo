@@ -87,6 +87,19 @@ header {
     font-weight: bold;
 }
 
+.box-saludo {
+     display: flex;
+    margin-top: 10px;
+     color: rgb(240, 26, 97);
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.username {
+    margin-right: 20px;
+}
+
 .pie {
     justify-content: center;
     align-items: center;
@@ -380,6 +393,10 @@ img {
     width: 100%;
 }
 
+
+.saludo {
+    display: none;
+}
 
 @media (max-width: 420px) {
 

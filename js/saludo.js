@@ -1,15 +1,14 @@
-let data = localStorage.getItem('user')
-let barra = document.querySelector('.login')
-if(barra ) {
-    barra.innerHTML = `<p>Bienvenido: ${data}</p>
-            <a id="logout" href="#">logout</a>`
+let user = localStorage.getItem('user')
+let loginContainer = document.querySelector('.login')
+let userContainer = document.querySelector('.saludo')
+let usernameP = document.querySelector(".username");
+
+if(user !== null) {
+    loginContainer.style.display = 'none'
+    userContainer.style.display = 'block'
+    usernameP.innerText = `Bienvenido: ${user}`
 }
-else{
-    alert("no se guardaron bien los datos")
-    barra.innerHTML = `<a href="./login.html">Login</a>
-            <a href="./register.html">Registrarse</a>`
-}
-barra.style.fontFamily = "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
-barra.style.color = "#f01a61"
-barra.style.fontWeight = "bold"
-barra.style.fontSize = "18px"
+usernameP.style.fontFamily = "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+usernameP.style.color = "#f01a61"
+usernameP.style.fontWeight = "bold"
+usernameP.style.fontSize = "18px"
