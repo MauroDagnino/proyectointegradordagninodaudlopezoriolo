@@ -12,4 +12,4 @@ else{
 barra.style.fontFamily = "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
 barra.style.color = "#f01a61"
 barra.style.fontWeight = "bold"
-barra.style.fontSize = "18px"
+barra.style.fontSize = "18px"
