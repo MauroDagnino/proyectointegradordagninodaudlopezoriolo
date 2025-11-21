@@ -1,238 +1,182 @@
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
 
-let formulario = document.querySelector(".buscador2");
-let input = document.querySelector("#barra")
+    let formulario = document.querySelector(".buscador2");
+    let input = document.querySelector("#barra")
 
-formulario.addEventListener("submit", function(e){
-    e.preventDefault();
-    let buscador = input.value.length;
+    formulario.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let buscador = input.value.length;
 
-    if (buscador == 0){
-        alert("el campo de busqueda está vacio")
-    }else if (buscador <= 3){
-        alert("el campo debe tener al menos tres caracteres")
-    }else{
-        formulario.submit()
-    }
-})
-
-let category = this.document.querySelector(".listalado")
-let urlCategory = 'https://dummyjson.com/products/category-list'
-
-fetch(urlCategory)
-.then(function(res){
-    return res.json()
-})
-
-.then(function(data){
-    console.log(data)
-    let cate = ""
-
-    for (let i = 0; i < data.length; i++) {
-        let categoria = data[i];
-        console.log(categoria);
-        cate += ` <li><a href="./category.html?cat=${categoria}">${categoria}</a></li>
-        `
-    }
-
-    category.innerHTML = cate
-})
-.catch(function (error) {
-    console.log("Error: " + error);
-})
-
-
-let quearySearch = new URLSearchParams(location.search);
-let productoElegido = quearySearch.get("detalles");
-let descripcionProducto = document.querySelector(".descripcion_producto");
-let seccion_comentarios = document.querySelector(".seccion_comentarios");
-
-console.log(productoElegido);
-
-fetch("https://dummyjson.com/products/categories")
-    .then(function (respuesta) {
-        console.log(respuesta);
-        return respuesta.json();
-    })
-    .then(function (array) {
-        let arrayUrl = [""];
-        for (let i = 0; i < array.length; i++) {
-            let url = array[i].url;
-            arrayUrl.push(url);
+        if (buscador == 0) {
+            alert("el campo de busqueda está vacio")
+        } else if (buscador <= 3) {
+            alert("el campo debe tener al menos tres caracteres")
+        } else {
+            formulario.submit()
         }
-
-        console.log(arrayUrl);
-
-        return arrayUrl;
     })
-    .then(function (arrayUrl) {
 
-        for (let urlProducto of arrayUrl) {
-            fetch(urlProducto)
-                .then(function (respuesta) {
-                    return respuesta.json();
-                })
-                .then(function (objeto) {
-                    console.log(objeto);
+    let category = this.document.querySelector(".listalado")
+    let urlCategory = 'https://dummyjson.com/products/category-list'
 
-                    let listadoProductos = objeto.products;
-                    let comentario = '';
+    fetch(urlCategory)
+        .then(function (res) {
+            return res.json()
+        })
 
-                    for (let i = 0; i < listadoProductos.length; i++) {
+        .then(function (data) {
+            console.log(data)
+            let cate = ""
 
-                        let review = listadoProductos[i].reviews;
+            for (let i = 0; i < data.length; i++) {
+                let categoria = data[i];
+                console.log(categoria);
+                cate += ` <li><a href="./category.html?cat=${categoria}">${categoria}</a></li>
+        `
+            }
 
-                        if (listadoProductos[i].title == productoElegido) {
-
-                            let titulo      = document.querySelector(".huevo2");
-                            let marca       = document.querySelector(".huevo3");
-                            let imagen      = document.querySelector(".fotohuevo");
-                            let descripcion = document.querySelector(".huevo4");
-                            let precio      = document.querySelector(".huevo5");
-                            let catTexto    = document.querySelector(".categoria");
-                            let stockTexto  = document.querySelector(".stock");
-                            let codigoTexto = document.querySelector(".codigo");
+            category.innerHTML = cate
+        })
+        .catch(function (error) {
+            console.log("Error: " + error);
+        })
 
 
-                            titulo.innerText      = listadoProductos[i].title;
+    let quearySearch = new URLSearchParams(location.search);
+    let productoElegido = quearySearch.get("id");
+    let descripcionProducto = document.querySelector(".descripcion_producto");
+    let seccion_comentarios = document.querySelector(".seccion_comentarios");
 
-                            marca.innerText       = listadoProductos[i].category;
-                            imagen.src            = listadoProductos[i].images[0];
-                            imagen.alt            = "imagen de " + listadoProductos[i].title;
-                            descripcion.innerText = listadoProductos[i].description;
-                            precio.innerText      = "$ " + listadoProductos[i].price;
-                            catTexto.innerText    = "Categoria: " + listadoProductos[i].category;
-                            stockTexto.innerText  = "Stock: " + listadoProductos[i].stock;
-                            codigoTexto.innerText = "# " + listadoProductos[i].id;
+    console.log(productoElegido);
+
+    fetch(`https://dummyjson.com/products/${productoElegido}`)
+        .then(function (respuesta) {
+            console.log(respuesta);
+            return respuesta.json();
+        })
+        .then(function (data) {
+
+            let comentario = '';
 
 
-                            let productoTags = listadoProductos[i].tags;
-                            console.log(productoTags);
 
-                            let todosLosTags = document.querySelector(".tags");
-                            let tagsHTML = "";
 
-                            if (productoTags.length == 1) {
-                                tagsHTML = `<li class="tagIndividual">${productoTags[0]}</li>`;
-                            }
-                            else if (productoTags.length == 2) {
-                                tagsHTML = `<li class="tagIndividual">${productoTags[0]}</li>
+            let titulo = document.querySelector(".huevo2");
+            let marca = document.querySelector(".huevo3");
+            let imagen = document.querySelector(".fotohuevo");
+            let descripcion = document.querySelector(".huevo4");
+            let precio = document.querySelector(".huevo5");
+            let catTexto = document.querySelector(".categoria");
+            let stockTexto = document.querySelector(".stock");
+            let codigoTexto = document.querySelector(".codigo");
+
+
+            titulo.innerText = listadoProductos[i].title;
+
+            marca.innerText = listadoProductos[i].category;
+            imagen.src = listadoProductos[i].images[0];
+            imagen.alt = "imagen de " + listadoProductos[i].title;
+            descripcion.innerText = listadoProductos[i].description;
+            precio.innerText = "$ " + listadoProductos[i].price;
+            catTexto.innerText = "Categoria: " + listadoProductos[i].category;
+            stockTexto.innerText = "Stock: " + listadoProductos[i].stock;
+            codigoTexto.innerText = "# " + listadoProductos[i].id;
+
+
+            let productoTags = listadoProductos[i].tags;
+            console.log(productoTags);
+
+            let todosLosTags = document.querySelector(".tags");
+            let tagsHTML = "";
+
+            if (productoTags.length == 1) {
+                tagsHTML = `<li class="tagIndividual">${productoTags[0]}</li>`;
+            }
+            else if (productoTags.length == 2) {
+                tagsHTML = `<li class="tagIndividual">${productoTags[0]}</li>
                                             <li class="tagIndividual">-${productoTags[1]}</li>`;
-                            }
-                            else {
-                                tagsHTML = `<li class="tagIndividual">${productoTags[0]}</li>
+            }
+            else {
+                tagsHTML = `<li class="tagIndividual">${productoTags[0]}</li>
                                             <li class="tagIndividual">-${productoTags[1]}</li>
                                             <li class="tagIndividual">-${productoTags[2]}</li>`;
-                            }
+            }
 
-                            todosLosTags.innerHTML = tagsHTML;
+            todosLosTags.innerHTML = tagsHTML;
 
 
-                            for (let r = 0; r < review.length; r++) {
-                                let rating = review[r].rating;
-                                let comentarioReview = review[r].comment;
-                                let fecha = review[r].date;
-                                let nombre = review[r].reviewerName;
+            for (let r = 0; r < review.length; r++) {
+                let rating = review[r].rating;
+                let comentarioReview = review[r].comment;
+                let fecha = review[r].date;
+                let nombre = review[r].reviewerName;
 
-                                if (rating == 1) {
-                                    comentario += `
+                if (rating == 1) {
+                    comentario += `
                                         <article class="comentarios">
                                             <h3 class="nobre_fecha">${nombre}</h3>
                                             <h3 class="fecha">${fecha}</h3>
                                             <h4 class="puntuacion">
-                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
-                                                <img src="./img/estrella-Gris.jpg" alt="estrella">
-                                                <img src="./img/estrella-Gris.jpg" alt="estrella">
-                                                <img src="./img/estrella-Gris.jpg" alt="estrella">
-                                                <img src="./img/estrella-Gris.jpg" alt="estrella">1/5
+                                                <p>⭐</p>1/5
                                             </h4>
                                             <p>${comentarioReview}</p>
                                         </article>
                                     `;
-                                    
-                                }
-                                else if (rating == 2) {
-                                    comentario += `
+
+                }
+                else if (rating == 2) {
+                    comentario += `
                                         <article class="comentarios">
                                             <h3 class="nobre_fecha">${nombre}</h3>
                                             <h3 class="fecha">${fecha}</h3>
                                             <h4 class="puntuacion">
-                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
-                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
-                                                <img src="./img/estrella-Gris.jpg" alt="estrella">
-                                                <img src="./img/estrella-Gris.jpg" alt="estrella">
-                                                <img src="./img/estrella-Gris.jpg" alt="estrella">2/5
+                                                <p>⭐⭐</p>2/5
                                             </h4>
                                             <p>${comentarioReview}</p>
                                         </article>
                                     `;
-                                }
-                                else if (rating == 3) {
-                                    comentario += `
+                }
+                else if (rating == 3) {
+                    comentario += `
                                         <article class="comentarios">
                                             <h3 class="nobre_fecha">${nombre}</h3>
                                             <h3 class="fecha">${fecha}</h3>
                                             <h4 class="puntuacion">
-                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
-                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
-                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
-                                                <img src="./img/estrella-Gris.jpg" alt="estrella">
-                                                <img src="./img/estrella-Gris.jpg" alt="estrella">3/5
+                                                <p>⭐⭐⭐</p>3/5
                                             </h4>
                                             <p>${comentarioReview}</p>
                                         </article>
                                     `;
-                                }
-                                else if (rating == 4) {
-                                    comentario += `
+                }
+                else if (rating == 4) {
+                    comentario += `
                                         <article class="comentarios">
                                             <h3 class="nobre_fecha">${nombre}</h3>
                                             <h3 class="fecha">${fecha}</h3>
                                             <h4 class="puntuacion">
-                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
-                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
-                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
-                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
-                                                <img src="./img/estrella-Gris.jpg" alt="estrella">4/5
+                                                <p>⭐⭐⭐⭐</p>4/5
                                             </h4>
                                             <p>${comentarioReview}</p>
                                         </article>
                                     `;
-                                }
-                                else {
-                                    comentario += `
+                }
+                else {
+                    comentario += `
                                         <article class="comentarios">
                                             <h3 class="nobre_fecha">${nombre}</h3>
                                             <h3 class="fecha">${fecha}</h3>
                                             <h4 class="puntuacion">
-                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
-                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
-                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
-                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
-                                                <img src="./img/estrella-Amarilla.jpg" alt="estrella">
+                                                <p>⭐⭐⭐⭐⭐</p>
                                                 5/5
                                             </h4>
                                             <p>${comentarioReview}</p>
                                         </article>
                                     `;
-                                }
-                            }
-
-                           
-                            
-                            seccion_comentarios.innerHTML = comentario;
-                        }
-                    }
-                })
-                .catch(function (error) {
-                    console.log('Error:', error);
-                });
-        }
-    });
+                }
+            }
 
 
 
-
-
-
+            seccion_comentarios.innerHTML = comentario;
+        })
 });
