@@ -48,8 +48,8 @@ fetch(urlCategory)
 
 
 let queryString = location.search;
-let query = new URLSearchParams(queryString);
-let category3 = query.get("cat");
+let cateto = new URLSearchParams(queryString);
+let category3 = cateto.get("cat");
 let product = document.querySelector(".productostop");
 
 product.innerHTML = ""
