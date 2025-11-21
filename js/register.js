@@ -56,5 +56,5 @@ formulario.addEventListener("submit", function(e){
         }
 
         window.location.href = "./login.html";
-    });
+    });
 });

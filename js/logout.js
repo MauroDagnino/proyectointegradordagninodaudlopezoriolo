@@ -18,11 +18,11 @@ document.addEventListener("click", function (e) {
             if (barra) {
                 barra.innerHTML = `<div class="login">
                 <a href="./login.html">Login</a>
-                <a href="./register.html">Registrarse</a><
-                /div>`
+                <a href="./register.html">Registrarse</a>
+                </div>`
             }
 
             window.location.href = "./index.html"
-        })
-    }
+        })
+    }
 })
