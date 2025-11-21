@@ -83,7 +83,7 @@ fetch(url_product)
             texto += `<section class="reviews">
                      <div class="review">
                         <p class="rating">${element.rating}</p>
-                        <p class="comentario">${element.comentario}
+                        <p class="comentario">${element.comment}
                         <p class="fecha1">${element.data}</p>
                         <p class="usuario">${element.reviewerName}</p>
                         <p class="email">${element.reviewerEmail}</p>
@@ -98,7 +98,7 @@ fetch(url_product)
         stock.innerText = `Stock: ${data.stock}`
         img.src = data.images[0];
         tags.innerText = `${data.tags}`;
-        review.innerText =`${texto}`;
+        review.innerHTML =`${texto}`;
      })
     .catch(function(error) {
         console.log ("error" + error);
