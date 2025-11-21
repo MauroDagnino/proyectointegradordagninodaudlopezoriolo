@@ -2,10 +2,7 @@ window.addEventListener("load", function(){
 
 let formulario = document.querySelector(".buscador2");
 let input = document.querySelector("#barra")
-let parrafo = document.querySelector(".logout1");
-let parrafo2 = this.document.querySelector(".logout2");
-parrafo2.style.display = "none";
-parrafo.style.display = "none";
+
 
 formulario.addEventListener("submit", function(e){
     e.preventDefault();
