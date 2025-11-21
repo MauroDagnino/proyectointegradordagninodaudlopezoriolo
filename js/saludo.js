@@ -12,3 +12,8 @@ usernameP.style.fontFamily = "system-ui, -apple-system, BlinkMacSystemFont, 'Seg
 usernameP.style.color = "#f01a61"
 usernameP.style.fontWeight = "bold"
 usernameP.style.fontSize = "18px"
+
+userContainer.style.fontFamily = "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif"
+userContainer.style.color = "#f01a61"
+userContainer.style.fontWeight = "bold"
+userContainer.style.fontSize = "18px"
