@@ -40,143 +40,63 @@ window.addEventListener("load", function () {
         .catch(function (error) {
             console.log("Error: " + error);
         })
+  }) 
 
+let queryString = location.search
+let queryStringID = new URLSearchParams (queryString);
+let qID = queryStringID.get ("id");
+let url_product = `https://dummyjson.com/products/${qID}`
+let nombre = document.querySelector(".huevo2")
+let marca = document.querySelector(".huevo3")
+let descripcion = document.querySelector(".huevo4")
+let precio = document.querySelector(".huevo5")
+let  categorias = document.querySelector(".huevo8")
+let stock = document.querySelector(".huevo9")
+let img = document.querySelector(".fotohuevo")
+let tags = document.querySelector(".huevo10")
+let review = document.querySelector(".reviews")
+let rating = document.querySelector(".raiting")
+let comentario = document.querySelector(".comentario")
+let fecha = document.querySelector(".fecha1")
+let nombreusuario = document.querySelector(".usuario")
 
-    let quearySearch = new URLSearchParams(location.search);
-    let productoElegido = quearySearch.get("id");
-    let descripcionProducto = document.querySelector(".descripcion_producto");
-    let seccion_comentarios = document.querySelector(".seccion_comentarios");
+fetch(url_product)
+    .then(function(response) {
+        return response.json()
+    })
+    .then(function (data) {
+        console.log(data)
+        console.log(data.category)
+        let categorias2 = data.category
+        for (let i = 0; i < 1; i ++){
+            const element = categorias2[i];
+            link += `<a href="category.html?category=${data.category}">categoria: ${data.category}</a>`
+        }
+        let reseñas = data.reviews
 
-    console.log(productoElegido);
+        let texto = "";
 
-    fetch("https://dummyjson.com/products/${productoElegido}")
-        .then(function (respuesta) {
-            console.log(respuesta);
-            return respuesta.json();
+        for (let i = 0; i < 3; i++) {
+            const element = reseñas [i];
+            texto += `<div class="review">
+            <p class="raiting">${element.rating}</p>
+            <p class="comentario">${element.comment}
+            <p class="fecha1">${element.data}</p>
+            <p class="huevo2">${element.reviewerName}</p>
+            <p class="emailUsu">${element.reviewerEmail}</p>
+            </div>`
+        }
+        nombre.innerText = data.title;
+        marca.innerText = `Marca: ${data.brand}`;
+        descripcion.innerText = data.descripcion;
+        precio.innerText = `Precio: ${data.price}`;
+        categorias.innerHTML = link
+        stock.innerText = `Stock: ${data.stock}`
+        img.src = data.images[0];
+        tags.innerText = `Tags: ${data.tags}`;
+        review.innerText =`<h3> Opiniones de usuario <h3> ${texto}`;
+     })
+    .catch(function(error) {
+        console.log ("error" + error);
         })
-        .then(function (data) {
-
-            let comentario = '';
-
-
-            
-
-                let titulo = document.querySelector(".huevo2");
-                let marca = document.querySelector(".huevo3");
-                let imagen = document.querySelector(".fotohuevo");
-                let descripcion = document.querySelector(".huevo4");
-                let precio = document.querySelector(".huevo5");
-                let catTexto = document.querySelector(".categoria");
-                let stockTexto = document.querySelector(".stock");
-                let codigoTexto = document.querySelector(".codigo");
-
-
-                titulo.innerText = listadoProductos[i].title;
-
-                marca.innerText = listadoProductos[i].category;
-                imagen.src = listadoProductos[i].images[0];
-                imagen.alt = "imagen de " + listadoProductos[i].title;
-                descripcion.innerText = listadoProductos[i].description;
-                precio.innerText = "$ " + listadoProductos[i].price;
-                catTexto.innerText = "Categoria: " + listadoProductos[i].category;
-                stockTexto.innerText = "Stock: " + listadoProductos[i].stock;
-                codigoTexto.innerText = "# " + listadoProductos[i].id;
-
-
-                let productoTags = listadoProductos[i].tags;
-                console.log(productoTags);
-
-                let todosLosTags = document.querySelector(".tags");
-                let tagsHTML = "";
-
-                if (productoTags.length == 1) {
-                    tagsHTML = <li class="tagIndividual">${productoTags[0]}</li>;
-                }
-                else if (productoTags.length == 2) {
-                    tagsHTML = `<li class="tagIndividual">${productoTags[0]}</li>
-                                            <li class="tagIndividual">-${productoTags[1]}</li>`;
-                }
-                else {
-                    tagsHTML = `<li class="tagIndividual">${productoTags[0]}</li>
-                                            <li class="tagIndividual">-${productoTags[1]}</li>
-                                            <li class="tagIndividual">-${productoTags[2]}</li>`;
-                }
-
-                todosLosTags.innerHTML = tagsHTML;
-
-
-                for (let r = 0; r < review.length; r++) {
-                    let rating = review[r].rating;
-                    let comentarioReview = review[r].comment;
-                    let fecha = review[r].date;
-                    let nombre = review[r].reviewerName;
-
-                    if (rating == 1) {
-                        comentario += `
-                                        <article class="comentarios">
-                                            <h3 class="nobre_fecha">${nombre}</h3>
-                                            <h3 class="fecha">${fecha}</h3>
-                                            <h4 class="puntuacion">
-                                                <p>⭐</p>1/5
-                                            </h4>
-                                            <p>${comentarioReview}</p>
-                                        </article>
-                                    `;
-
-                    }
-                    else if (rating == 2) {
-                        comentario += `
-                                        <article class="comentarios">
-                                            <h3 class="nobre_fecha">${nombre}</h3>
-                                            <h3 class="fecha">${fecha}</h3>
-                                            <h4 class="puntuacion">
-                                                <p>⭐⭐</p>2/5
-                                            </h4>
-                                            <p>${comentarioReview}</p>
-                                        </article>
-                                    `;
-                    }
-                    else if (rating == 3) {
-                        comentario += `
-                                        <article class="comentarios">
-                                            <h3 class="nobre_fecha">${nombre}</h3>
-                                            <h3 class="fecha">${fecha}</h3>
-                                            <h4 class="puntuacion">
-                                                <p>⭐⭐⭐</p>3/5
-                                            </h4>
-                                            <p>${comentarioReview}</p>
-                                        </article>
-                                    `;
-                    }
-                    else if (rating == 4) {
-                        comentario += `
-                                        <article class="comentarios">
-                                            <h3 class="nobre_fecha">${nombre}</h3>
-                                            <h3 class="fecha">${fecha}</h3>
-                                            <h4 class="puntuacion">
-                                                <p>⭐⭐⭐⭐</p>4/5
-                                            </h4>
-                                            <p>${comentarioReview}</p>
-                                        </article>
-                                    `;
-                    }
-                    else {
-                        comentario += `
-                                        <article class="comentarios">
-                                            <h3 class="nobre_fecha">${nombre}</h3>
-                                            <h3 class="fecha">${fecha}</h3>
-                                            <h4 class="puntuacion">
-                                                <p>⭐⭐⭐⭐⭐</p>
-                                                5/5
-                                            </h4>
-                                            <p>${comentarioReview}</p>
-                                        </article>
-                                    `;
-                    }
-                }
-
-
-
-                seccion_comentarios.innerHTML = comentario;
-            });
-        });
+ 
