@@ -42,36 +42,34 @@ window.addEventListener("load", function () {
         })
   }) 
 
-let queryString = location.search
-let queryStringID = new URLSearchParams (queryString);
-let qID = queryStringID.get ("id");
-let url_product = `https://dummyjson.com/products/${qID}`
+let query = location.search
+let queryId = new URLSearchParams (query);
+let qId = queryId.get ("id");
+let urlProduct = `https://dummyjson.com/products/${qId}`
 let nombre = document.querySelector(".huevo2")
-let marca = document.querySelector(".huevo3")
+let marcas = document.querySelector(".huevo3")
 let descripcion = document.querySelector(".huevo4")
 let precio = document.querySelector(".huevo5")
-let  categorias = document.querySelector(".huevo8")
+let review = document.querySelector(".reviews")
+let category = document.querySelector(".huevo8")
 let stock = document.querySelector(".huevo9")
+let nombreusuario = document.querySelector(".usuario")
 let img = document.querySelector(".fotohuevo")
 let tags = document.querySelector(".huevo10")
-let review = document.querySelector(".reviews")
-let rating = document.querySelector(".rating")
-let comentario = document.querySelector(".comentario")
-let fecha = document.querySelector(".fecha1")
-let nombreusuario = document.querySelector(".usuario")
-let mailusu = document.querySelector(".email")
 
-fetch(url_product)
-    .then(function(response) {
-        return response.json()
+
+
+fetch(urlProduct)
+    .then(function(res) {
+        return res.json()
     })
     .then(function (data) {
         console.log(data)
         console.log(data.category)
-        let categorias2 = data.category
+        let category2 = data.category
         let link = ""
         for (let i = 0; i < 1; i ++){
-            const element = categorias2[i];
+            const element = category2[i];
             link += `<a href="category.html?category=${data.category}">categoria: ${data.category}</a>`
         }
         let reseñas = data.reviews
@@ -91,10 +89,10 @@ fetch(url_product)
                       </section>`
         }
         nombre.innerText = data.title;
-        marca.innerText = `${data.brand}`;
+        marcas.innerText = `${data.brand}`;
         descripcion.innerText = `${data.description}`;
         precio.innerText = `$${data.price}`;
-        categorias.innerHTML = link
+        category.innerHTML = link
         stock.innerText = `Stock: ${data.stock}`
         img.src = data.images[0];
         tags.innerText = `${data.tags}`;
